@@ -1,15 +1,15 @@
 'use client'
 
-import Image from 'next/image'
 import Title from './Title'
-import { useFetch } from '@/hooks'
+import Image from 'next/image'
 import planet from '@/assets/planets.jpg'
+import { usePlanets } from '@/hooks/usePlanets'
 
 const Planets = () => {
-  const { planets } = useFetch()
+  const { data, isLoading, isError } = usePlanets()
   return (
-    <section id="planets" className="container">
-      <Title text="Planetas" id="planets" />
+    <section id="planets" className="container pt-24">
+      <Title text="Planetas" />
 
       <section
         className="m-1 flex h-[80vh] w-full items-center justify-between rounded-lg bg-zinc-900 p-2
@@ -20,21 +20,25 @@ const Planets = () => {
             rounded-lg
           "
         >
-          {planets.map((planet) => (
+          {isLoading && <p>Carregando..</p>}
+          {isError && <p>error..</p>}
+
+          {data?.map((planet) => (
             <h1
               key={planet.name}
-              className="m-1 inline-block w-40 rounded-lg bg-zinc-950 p-2 text-center font-bold text-white"
+              className="m-1 inline-block w-40 rounded-lg bg-zinc-950 p-2 text-center
+              font-bold text-white transition-all ease-in-out hover:bg-white hover:text-zinc-900"
             >
               {planet.name}
             </h1>
           ))}
         </section>
 
-        <figure className="h-full w-1/2 rounded-lg">
+        <figure className="h-[90%] w-1/2 rounded-lg">
           <Image
             src={planet}
             alt="planets"
-            className="h-full w-full rounded-lg object-cover"
+            className="h-full w-full rounded-lg object-cover shadow-2xl"
           />
         </figure>
       </section>

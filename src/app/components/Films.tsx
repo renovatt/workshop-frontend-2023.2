@@ -1,21 +1,25 @@
 'use client'
 
 import Title from './Title'
-import { useFetch } from '@/hooks'
+import { useFilms } from '@/hooks/useFilms'
 
 const Films = () => {
-  const { films } = useFetch()
+  const { data, isLoading, isError } = useFilms()
   return (
-    <section className="container">
-      <Title text="Filmes" id="films" />
+    <section id="films" className="container min-h-screen pt-24">
+      <Title text="Filmes" />
 
-      <section className="mt-10 flex flex-wrap items-center justify-around gap-2">
-        {films
-          .sort((a, b) => a.episode_id - b.episode_id)
-          .map((film) => (
+      {isLoading && <p>Carregando..</p>}
+      {isError && <p>error..</p>}
+
+      <section className="flex flex-wrap items-center justify-around gap-2">
+        {data
+          ?.sort((a, b) => a.episode_id - b.episode_id)
+          ?.map((film) => (
             <section
               key={film.title}
-              className="m-1 flex h-full w-80 flex-col items-start justify-center rounded-lg bg-zinc-900 p-2
+              className="m-1 flex h-full w-80 flex-col items-start justify-center rounded-lg bg-zinc-900 p-2 shadow-2xl transition-all
+              ease-in-out hover:bg-zinc-950
         "
             >
               <span className="font-semibold text-white">

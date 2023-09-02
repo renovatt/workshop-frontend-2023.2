@@ -1,19 +1,19 @@
 'use client'
 
 import Card from './Card'
-import { useFetch } from '@/hooks'
 import Title from './Title'
+import { usePeople } from '@/hooks/usePeople'
 
 const Gallery = () => {
-  const { people } = useFetch()
+  const { data, isLoading, isError } = usePeople()
   return (
-    <section className="bg-gradient-center container bg-zinc-900">
-      <Title text="Galeria" id="gallery" />
+    <section id="gallery" className="container pt-24">
+      <Title text="Galeria" />
 
-      <section className="mt-10 flex flex-wrap items-center justify-around gap-10">
-        {people.map((char) => (
-          <Card key={char.name} {...char} />
-        ))}
+      {isLoading && <p>Carregando..</p>}
+      {isError && <p>error..</p>}
+      <section className="flex min-h-screen flex-wrap items-center justify-around gap-10">
+        {data?.map((char) => <Card key={char.name} {...char} />)}
       </section>
     </section>
   )

@@ -11,7 +11,7 @@ export type CharacterProps = {
   gender: string
   homeworld: string
   films: string[]
-  species: any[]
+  // species: any[]
   vehicles: string[]
   starships: string[]
   created: string
@@ -48,7 +48,7 @@ export type VehiclesProps = {
   cargo_capacity: string
   consumables: string
   vehicle_class: string
-  pilots: any[]
+  // pilots: any[]
   films: string[]
   created: string
   edited: string
@@ -82,7 +82,10 @@ export type ContainerProps = {
   children: ReactNode
 }
 
+export type ReactQueryProviderProps = {
+  children: ReactNode
+}
+
 export type TitleProps = {
   text: string
-  id: string
 }
