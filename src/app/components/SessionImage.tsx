@@ -7,7 +7,10 @@ export type SessionImageProps = {
 
 const SessionImage = ({ img }: SessionImageProps) => {
   return (
-    <section className="flex h-60 w-full items-center justify-center bg-zinc-900">
+    <section
+      data-aos="fade-up"
+      className="flex h-60 w-full items-center justify-center bg-zinc-900"
+    >
       <figure className="h-40 w-40">
         <Image
           src={img}

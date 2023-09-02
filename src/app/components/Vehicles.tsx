@@ -3,6 +3,7 @@
 import React from 'react'
 import Title from './Title'
 import { useVehicles } from '@/hooks/useVehicles'
+import Loading from './Loading'
 
 const Vehicles = () => {
   const { data, isLoading, isError } = useVehicles()
@@ -10,10 +11,13 @@ const Vehicles = () => {
     <section id="vehicles" className="container min-h-screen pt-24">
       <Title text="Veículos" />
 
-      {isLoading && <p>Carregando..</p>}
+      {isLoading && <Loading />}
       {isError && <p>error..</p>}
 
-      <section className="flex flex-wrap items-center justify-between gap-2">
+      <section
+        data-aos="fade-up"
+        className="flex flex-wrap items-center justify-between gap-2"
+      >
         {data?.map((vehicle) => (
           <section
             key={vehicle.name}

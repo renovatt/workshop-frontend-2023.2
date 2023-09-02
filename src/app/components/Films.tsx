@@ -1,5 +1,6 @@
 'use client'
 
+import Loading from './Loading'
 import Title from './Title'
 import { useFilms } from '@/hooks/useFilms'
 
@@ -9,14 +10,18 @@ const Films = () => {
     <section id="films" className="container min-h-screen pt-24">
       <Title text="Filmes" />
 
-      {isLoading && <p>Carregando..</p>}
+      {isLoading && <Loading />}
       {isError && <p>error..</p>}
 
-      <section className="flex flex-wrap items-center justify-around gap-2">
+      <section
+        data-aos="fade-up"
+        className="flex flex-wrap items-center justify-around gap-2 "
+      >
         {data
           ?.sort((a, b) => a.episode_id - b.episode_id)
           ?.map((film) => (
             <section
+              data-aos="fade-up"
               key={film.title}
               className="m-1 flex h-full w-80 flex-col items-start justify-center rounded-lg bg-zinc-900 p-2 shadow-2xl transition-all
               ease-in-out hover:bg-zinc-950

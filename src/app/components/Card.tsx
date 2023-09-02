@@ -27,6 +27,7 @@ const Card = ({ ...char }: CharacterProps) => {
 
   return (
     <section
+      data-aos-anchor-placement="top-center"
       key={char.name}
       className="m-1 flex h-full w-80 flex-col items-start justify-center rounded-lg bg-zinc-900 p-2 shadow-2xl transition-all
       ease-in-out hover:bg-zinc-950

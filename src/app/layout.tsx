@@ -5,6 +5,7 @@ import Header from './components/Header'
 import Container from './components/Container'
 import Footer from './components/Footer'
 import ReactQueryProvider from './components/ReactQueryProvider'
+import { AosProvider } from './components/AosProvider'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -25,9 +26,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={poppins.className}>
         <ReactQueryProvider>
-          <Header />
-          <Container>{children}</Container>
-          <Footer />
+          <AosProvider>
+            <Header />
+            <Container>{children}</Container>
+            <Footer />
+          </AosProvider>
         </ReactQueryProvider>
       </body>
     </html>

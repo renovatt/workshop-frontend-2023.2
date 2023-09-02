@@ -4,6 +4,7 @@ import Title from './Title'
 import Image from 'next/image'
 import planet from '@/assets/planets.jpg'
 import { usePlanets } from '@/hooks/usePlanets'
+import Loading from './Loading'
 
 const Planets = () => {
   const { data, isLoading, isError } = usePlanets()
@@ -12,15 +13,17 @@ const Planets = () => {
       <Title text="Planetas" />
 
       <section
-        className="m-1 flex w-full flex-col-reverse items-center justify-between rounded-lg bg-zinc-900 p-2 md:h-[80vh] md:flex-row
+        data-aos="fade-up"
+        className="m-1 flex w-full flex-col-reverse items-center justify-between overflow-hidden rounded-lg bg-zinc-900 p-2 md:h-[80vh] md:flex-row
         "
       >
         <section
+          data-aos="fade-right"
           className="m-2 flex flex-wrap items-center justify-center rounded-lg md:m-0 md:w-1/2 md:flex-col md:items-start
             md:justify-start
           "
         >
-          {isLoading && <p>Carregando..</p>}
+          {isLoading && <Loading />}
           {isError && <p>error..</p>}
 
           {data?.map((planet) => (
@@ -34,7 +37,10 @@ const Planets = () => {
           ))}
         </section>
 
-        <figure className="h-[90%] overflow-hidden rounded-lg md:w-1/2">
+        <figure
+          data-aos="fade-left"
+          className="h-[90%] overflow-hidden rounded-lg md:w-1/2"
+        >
           <Image
             src={planet}
             alt="planets"
