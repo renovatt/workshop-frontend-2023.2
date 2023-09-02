@@ -17,6 +17,10 @@ const Navbar = () => {
         </li>
 
         <li className="m-2 p-2">
+          <RouterLinks href="#films" text="Filmes" />
+        </li>
+
+        <li className="m-2 p-2">
           <RouterLinks href="#vehicles" text="Veículos" />
         </li>
       </ul>
