@@ -13,7 +13,7 @@ const SessionImage = ({ img }: SessionImageProps) => {
           src={img}
           alt="image"
           className="h-full
-         w-full object-cover shadow-lg"
+         w-full object-cover"
         />
       </figure>
     </section>

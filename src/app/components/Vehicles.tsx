@@ -7,7 +7,7 @@ import { useVehicles } from '@/hooks/useVehicles'
 const Vehicles = () => {
   const { data, isLoading, isError } = useVehicles()
   return (
-    <section id="vehicles" className="container h-screen pt-24">
+    <section id="vehicles" className="container min-h-screen pt-24">
       <Title text="Veículos" />
 
       {isLoading && <p>Carregando..</p>}

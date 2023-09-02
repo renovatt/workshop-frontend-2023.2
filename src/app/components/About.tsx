@@ -4,16 +4,16 @@ import banner from '@/assets/banner.jpg'
 
 const About = () => {
   return (
-    <section className="bg-primary container flex h-screen items-center justify-between gap-10">
-      <figure className="h-96 w-1/2 rounded-lg bg-zinc-950">
+    <section className="container flex min-h-screen flex-col items-center gap-10 bg-primary pt-40 md:flex-row md:justify-between md:pt-0">
+      <figure className="h-96 overflow-hidden rounded-lg bg-zinc-950 md:w-1/2">
         <Image
           src={banner}
           alt="about-image"
-          className="h-full w-full rounded-lg object-cover
+          className="h-full w-full rounded-lg object-cover shadow-2xl transition-all ease-in-out hover:scale-110
         "
         />
       </figure>
-      <article className="flex h-96 w-1/2 flex-col items-start justify-start">
+      <article className="flex flex-col items-start justify-start md:h-96 md:w-1/2">
         <h1 className="mb-1 text-3xl font-bold text-white">
           {Curiosity.Title}
         </h1>

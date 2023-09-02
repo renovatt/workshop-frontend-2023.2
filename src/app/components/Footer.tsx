@@ -6,13 +6,13 @@ const Footer = () => {
   const currentYear = date.getFullYear()
 
   return (
-    <footer className="flex h-20 items-center justify-around border-t border-white">
+    <footer className="flex h-20 items-center justify-around border-t border-primary">
       <section className="flex">
-        <span className="m-1 font-bold text-white">
+        <span className="m-1 text-xs font-bold text-white md:text-base">
           &copy; {currentYear} willcode | Powered by
         </span>
         <Link
-          className="flex items-center font-bold text-white hover:text-red-600"
+          className="flex items-center text-xs font-bold text-white hover:text-black md:text-base"
           href="https://www.linkedin.com/in/renovatt"
           target="_blank"
         >
@@ -26,7 +26,7 @@ const Footer = () => {
           href="https://www.linkedin.com/in/renovatt"
           target="_blank"
         >
-          <FaLinkedin className="h-6 w-6 text-white transition-all ease-in hover:text-red-600" />
+          <FaLinkedin className="h-6 w-6 text-white transition-all ease-in hover:text-black" />
         </Link>
 
         <Link
@@ -34,7 +34,7 @@ const Footer = () => {
           href="https://github.com/renovatt"
           target="_blank"
         >
-          <FaGithub className="h-6 w-6 text-white transition-all ease-in hover:text-red-600" />
+          <FaGithub className="h-6 w-6 text-white transition-all ease-in hover:text-black" />
         </Link>
       </section>
     </footer>

@@ -6,7 +6,11 @@ const LogoImage = () => {
   return (
     <Link href={'/'}>
       <figure className="h-10 w-20">
-        <Image src={logo} alt="logo-star-wars" className="h-full w-full" />
+        <Image
+          src={logo}
+          alt="logo-star-wars"
+          className="h-full w-full rounded-md"
+        />
       </figure>
     </Link>
   )

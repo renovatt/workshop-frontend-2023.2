@@ -17,6 +17,11 @@ module.exports = {
           DEFAULT: '#222223',
         },
       },
+      colors: {
+        primary: {
+          DEFAULT: '#fcc23f',
+        },
+      },
     },
   },
   plugins: [],

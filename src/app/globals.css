@@ -8,7 +8,7 @@
   --background-end-rgb: 255, 255, 255;
 
   --bg-default: #222223;
-  --scrollbar-track: #00EBF0;
+  --scrollbar-track: #fcc23f;
   --scrollbar-thumb: #222223;
 }
 
@@ -51,6 +51,10 @@ a{
   .container {
     @apply sm:max-w-[768px] md:max-w-[1440px] px-4 py-10 md:px-20;
   }
+
+  .custom-cursor {
+    cursor: url('../assets/yoda.png'), auto;
+  }
 }
 
 @layer utilities{
@@ -69,6 +73,12 @@ a{
       rgba(34,34,35,1) 100%
       );
   }
+
+  .bg-gradient-main{
+    background: linear-gradient(
+      to right, #171618, #fcc23f
+    );
+  }
 }
 
 html {
@@ -78,7 +88,7 @@ html {
 
 #__next,
 body {
-  @apply h-full;
+  @apply h-full custom-cursor;
 }
 
 body {

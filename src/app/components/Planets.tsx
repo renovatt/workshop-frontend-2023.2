@@ -12,12 +12,12 @@ const Planets = () => {
       <Title text="Planetas" />
 
       <section
-        className="m-1 flex h-[80vh] w-full items-center justify-between rounded-lg bg-zinc-900 p-2
+        className="m-1 flex w-full flex-col-reverse items-center justify-between rounded-lg bg-zinc-900 p-2 md:h-[80vh] md:flex-row
         "
       >
         <section
-          className="flex w-1/2 flex-col items-start justify-start
-            rounded-lg
+          className="m-2 flex flex-wrap items-center justify-center rounded-lg md:m-0 md:w-1/2 md:flex-col md:items-start
+            md:justify-start
           "
         >
           {isLoading && <p>Carregando..</p>}
@@ -34,11 +34,11 @@ const Planets = () => {
           ))}
         </section>
 
-        <figure className="h-[90%] w-1/2 rounded-lg">
+        <figure className="h-[90%] overflow-hidden rounded-lg md:w-1/2">
           <Image
             src={planet}
             alt="planets"
-            className="h-full w-full rounded-lg object-cover shadow-2xl"
+            className="h-full w-full rounded-lg object-cover shadow-2xl transition-all ease-in-out hover:scale-110"
           />
         </figure>
       </section>
